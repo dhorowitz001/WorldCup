@@ -37,7 +37,7 @@ cat games.csv | while IFS="," read year round winner opponent winner_goals oppon
         $opponent_goals
     ON CONFLICT (year, round, winner_id, opponent_id) DO NOTHING;"
 
-done < <(tail -n +2 "$GAMES_CSV_FILE")  # Skip the header line
+done # < <(tail -n +2 "$GAMES_CSV_FILE")  # Skip the header line
 
 # # Check if the teams and games were imported successfully
 # if [ $? -eq 0 ]; then
