@@ -38,10 +38,3 @@ cat games.csv | while IFS="," read year round winner opponent winner_goals oppon
 
 done # < <(tail -n +2 "$GAMES_CSV_FILE")  # Skip the header line
 
-# # Check if the teams and games were imported successfully
-# if [ $? -eq 0 ]; then
-#     echo "Teams and games imported successfully."
-# else
-#     echo "Error importing teams or games."
-#     exit 1
-# fi
