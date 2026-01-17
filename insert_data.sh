@@ -34,8 +34,7 @@ cat games.csv | while IFS="," read year round winner opponent winner_goals oppon
         (SELECT team_id FROM $TEAMS_TABLE_NAME WHERE name = '$winner'),
         (SELECT team_id FROM $TEAMS_TABLE_NAME WHERE name = '$opponent'),
         $winner_goals,
-        $opponent_goals
-    ON CONFLICT (year, round, winner_id, opponent_id) DO NOTHING;"
+        $opponent_goals;"
 
 done # < <(tail -n +2 "$GAMES_CSV_FILE")  # Skip the header line
 
